@@ -20,6 +20,8 @@ public class BaseTest {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("http://localhost:8080/");
+
+        BasePage.setDriver(driver);
     }
 
     @AfterEach
