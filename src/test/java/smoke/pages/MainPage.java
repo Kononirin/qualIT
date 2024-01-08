@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import smoke.core.BasePage;
-import smoke.core.BaseTest;
 
 public class MainPage extends BasePage {
 

@@ -17,62 +17,68 @@ public class Positive extends BaseTest {
     MainPage mainPage;
     ListOfFoodPage listOfFoodPage;
 
+    String fruitCyrillicAndLatinSymbols = "ЭкЗоТиЧеСкИй FrUiT";
+    List<String> listWithFruitCyrillicAndLatinSymbols = Arrays.asList(
+            "5", "ЭкЗоТиЧеСкИй FrUiT", "Фрукт", "true");
+
     @Test
     public void testAddingExoticFruit() {
         mainPage = new MainPage(driver);
         listOfFoodPage = new ListOfFoodPage(driver);
 
-        List<String> expectedElementsStr = Arrays.asList(
-                "5", "ЭкЗоТиЧеСкИй FrUiT", "Фрукт", "true");
-
         new MainPage(driver)
             .clickDropdownSandbox()
             .clickPointFood()
             .clickButtonAdd()
-            .typeFruitName()
+            .typeName(fruitCyrillicAndLatinSymbols)
             .clickDropdownTypeFruit()
             .clickCheckBoxExotic()
             .clickButtonSave();
 
-        List<WebElement> actualElements = driver.findElements(By.xpath(
+        List<WebElement> lastRowInTableOfFoods = driver.findElements(By.xpath(
                 "//tr[5]/*"));
 
-        List<String> actualElementsStr = new ArrayList<>();
+        List<String> lastRowInTableOfFoodsStr = new ArrayList<>();
 
-        for (WebElement element : actualElements) {
-            actualElementsStr.add(element.getText());
+        for (WebElement element : lastRowInTableOfFoods) {
+            lastRowInTableOfFoodsStr.add(element.getText());
         }
 
-        Assertions.assertEquals(expectedElementsStr, actualElementsStr,
+        Assertions.assertEquals(
+                listWithFruitCyrillicAndLatinSymbols,
+                lastRowInTableOfFoodsStr,
                 "Не совпадают элементы в таблице товаров");
     }
+
+    String vegetableSpecialCharacters = "`!@#$%^&*()_+?/~.♣☺♂{code};–<>";
+    List<String> listWithVegetableSpecialCharacters = Arrays.asList(
+            "5", "`!@#$%^&*()_+?/~.♣☺♂{code};–<>", "Овощ", "false");
 
     @Test
     public void testAddingVegetable() {
         mainPage = new MainPage(driver);
         listOfFoodPage = new ListOfFoodPage(driver);
 
-        List<String> expectedElementsStr = Arrays.asList(
-                "5", "`!@#$%^&*()_+?/~.♣☺♂{code};–<>", "Овощ", "false");
-
         new MainPage(driver)
                 .clickDropdownSandbox()
                 .clickPointFood()
                 .clickButtonAdd()
-                .typeVegetableName()
+                .typeName(vegetableSpecialCharacters)
                 .clickDropdownTypeVegetable()
                 .clickButtonSave();
 
-        List<WebElement> actualElements = driver.findElements(By.xpath(
+        List<WebElement> lastRowInTableOfFoods = driver.findElements(By.xpath(
                 "//tr[5]/*"));
 
-        List<String> actualElementsStr = new ArrayList<>();
+        List<String> lastRowInTableOfFoodsStr = new ArrayList<>();
 
-        for (WebElement element : actualElements) {
-            actualElementsStr.add(element.getText());
+        for (WebElement element : lastRowInTableOfFoods) {
+            lastRowInTableOfFoodsStr.add(element.getText());
         }
 
-        Assertions.assertEquals(expectedElementsStr, actualElementsStr,
+        Assertions.assertEquals(
+                listWithVegetableSpecialCharacters,
+                lastRowInTableOfFoodsStr,
                 "Не совпадают элементы в таблице товаров");
     }
 

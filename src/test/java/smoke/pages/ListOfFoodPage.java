@@ -5,9 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import smoke.core.BasePage;
-import smoke.core.BaseTest;
-
-import java.util.List;
 
 public class ListOfFoodPage extends BasePage {
 
@@ -21,19 +18,16 @@ public class ListOfFoodPage extends BasePage {
     private WebElement dropdownType;
 
     @FindBy(xpath = "//option[@value='FRUIT']")
-    private WebElement pointFruitType;
+    private WebElement dropdownPointFruitType;
+
+    @FindBy(xpath = "//option[@value='VEGETABLE']")
+    private WebElement dropdownPointVegetableType;
 
     @FindBy(id = "exotic")
     private WebElement checkBoxExotic;
 
     @FindBy(id = "save")
     private WebElement buttonSave;
-
-    @FindBy(id = "save")
-    private WebElement List;
-
-    @FindBy(xpath = "//tr[5]/*")
-    private List<WebElement> lastRowInTableFoods;
 
     public ListOfFoodPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -52,28 +46,20 @@ public class ListOfFoodPage extends BasePage {
         return buttonSave.getCssValue("background-color");
     }
 
-    String fruitName = "ЭкЗоТиЧеСкИй FrUiT";
-
-    public ListOfFoodPage typeFruitName() {
-        inputName.sendKeys(fruitName);
-        return this;
-    }
-
-    String vegetableName = "`!@#$%^&*()_+?/~.♣☺♂{code};–<>";
-
-    public ListOfFoodPage typeVegetableName() {
-        inputName.sendKeys(vegetableName);
+    public ListOfFoodPage typeName(String name) {
+        inputName.sendKeys(name);
         return this;
     }
 
     public ListOfFoodPage clickDropdownTypeFruit() {
         dropdownType.click();
-        pointFruitType.click();
+        dropdownPointFruitType.click();
         return this;
     }
 
     public ListOfFoodPage clickDropdownTypeVegetable() {
         dropdownType.click();
+        dropdownPointVegetableType.click();
         return this;
     }
 
@@ -82,8 +68,8 @@ public class ListOfFoodPage extends BasePage {
         return this;
     }
 
-    public ListOfFoodPage clickButtonSave() {
+    public MainPage clickButtonSave() {
         buttonSave.click();
-        return this;
+        return new MainPage(driver);
     }
 }
