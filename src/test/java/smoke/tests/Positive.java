@@ -17,7 +17,6 @@ public class Positive extends BaseTest {
     MainPage mainPage;
     ListOfFoodPage listOfFoodPage;
 
-    String fruitCyrillicAndLatinSymbols = "ЭкЗоТиЧеСкИй FrUiT";
     List<String> listWithFruitCyrillicAndLatinSymbols = Arrays.asList(
             "5", "ЭкЗоТиЧеСкИй FrUiT", "Фрукт", "true");
 
@@ -30,7 +29,7 @@ public class Positive extends BaseTest {
             .clickDropdownSandbox()
             .clickPointFood()
             .clickButtonAdd()
-            .typeName(fruitCyrillicAndLatinSymbols)
+            .typeName(listWithFruitCyrillicAndLatinSymbols.get(1))
             .clickDropdownTypeFruit()
             .clickCheckBoxExotic()
             .clickButtonSave();
@@ -50,7 +49,6 @@ public class Positive extends BaseTest {
                 "Не совпадают элементы в таблице товаров");
     }
 
-    String vegetableSpecialCharacters = "`!@#$%^&*()_+?/~.♣☺♂{code};–<>";
     List<String> listWithVegetableSpecialCharacters = Arrays.asList(
             "5", "`!@#$%^&*()_+?/~.♣☺♂{code};–<>", "Овощ", "false");
 
@@ -63,7 +61,7 @@ public class Positive extends BaseTest {
                 .clickDropdownSandbox()
                 .clickPointFood()
                 .clickButtonAdd()
-                .typeName(vegetableSpecialCharacters)
+                .typeName(listWithVegetableSpecialCharacters.get(1))
                 .clickDropdownTypeVegetable()
                 .clickButtonSave();
 
