@@ -18,7 +18,7 @@ public class Positive extends BaseTest {
     ListOfFoodPage listOfFoodPage;
 
     List<String> listWithFruitCyrillicAndLatinSymbols = Arrays.asList(
-            "5", "ЭкЗоТиЧеСкИй FrUiT", "Фрукт", "true");
+            "5", "ЭкЗоТиЧеСкИй FrUiT!", "Фрукт", "true");
 
     @Test
     public void testAddingExoticFruit() {
@@ -47,6 +47,10 @@ public class Positive extends BaseTest {
                 listWithFruitCyrillicAndLatinSymbols,
                 lastRowInTableOfFoodsStr,
                 "Не совпадают элементы в таблице товаров");
+
+        new MainPage(driver)
+                .clickDropdownSandbox()
+                .clickButtonDeleteData();
     }
 
     List<String> listWithVegetableSpecialCharacters = Arrays.asList(
@@ -78,6 +82,10 @@ public class Positive extends BaseTest {
                 listWithVegetableSpecialCharacters,
                 lastRowInTableOfFoodsStr,
                 "Не совпадают элементы в таблице товаров");
+
+        new MainPage(driver)
+                .clickDropdownSandbox()
+                .clickButtonDeleteData();
     }
 
     @Test

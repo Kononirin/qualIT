@@ -14,6 +14,9 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//a[@href='/food']")
     private WebElement pointFood;
 
+    @FindBy(id = "reset")
+    private WebElement buttonDeleteData;
+
     public MainPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
@@ -26,6 +29,11 @@ public class MainPage extends BasePage {
     public ListOfFoodPage clickPointFood() {
         pointFood.click();
         return new ListOfFoodPage(driver);
+    }
+
+    public MainPage clickButtonDeleteData() {
+        buttonDeleteData.click();
+        return this;
     }
 
 }
