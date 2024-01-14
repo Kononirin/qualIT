@@ -1,5 +1,6 @@
 package smoke.pages;
 
+import io.cucumber.java.bg.И;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,19 +23,21 @@ public class MainPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    @Step("Пользователь нажимает на выпадающий список 'Песочница'")
+
+
+    @И("Пользователь нажимает на выпадающий список 'Песочница'")
     public MainPage clickDropdownSandbox() {
         dropdownSandbox.click();
         return this;
     }
 
-    @Step("Пользователь выбирает в выпадающем списке пункт 'Товары'")
+    @И("Пользователь выбирает в выпадающем списке пункт 'Товары'")
     public ListOfFoodPage clickPointFood() {
         pointFood.click();
         return new ListOfFoodPage(driver);
     }
 
-    @Step("Пользователь выбирает в выпадающем списке пункт 'Сброс данных'")
+    @И("Пользователь выбирает в выпадающем списке пункт 'Сброс данных'")
     public MainPage clickPointDeleteData() {
         buttonDeleteData.click();
         return this;

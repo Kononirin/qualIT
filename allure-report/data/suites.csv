@@ -1,5 +1,5 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"broken","Sun Jan 14 15:56:54 YEKT 2024","Sun Jan 14 15:57:06 YEKT 2024","11490","","smoke.tests.TestsPositive","","smoke.tests.TestsPositive","testColorOfButtonAdd","testColorOfButtonAdd()",""
-"broken","Sun Jan 14 15:56:27 YEKT 2024","Sun Jan 14 15:56:43 YEKT 2024","15132","","smoke.tests.TestsPositive","","smoke.tests.TestsPositive","testAddingVegetable","Проверка добавления овоща",""
-"broken","Sun Jan 14 15:56:43 YEKT 2024","Sun Jan 14 15:56:54 YEKT 2024","11577","","smoke.tests.TestsPositive","","smoke.tests.TestsPositive","testColorOfButtonSave","testColorOfButtonSave()",""
 "broken","Sun Jan 14 15:57:06 YEKT 2024","Sun Jan 14 15:57:17 YEKT 2024","11494","","smoke.tests.TestsPositive","","smoke.tests.TestsPositive","testAddingExoticFruit","Проверка добавления экзотического фрукта",""
+"broken","Sun Jan 14 15:56:54 YEKT 2024","Sun Jan 14 15:57:06 YEKT 2024","11490","","smoke.tests.TestsPositive","","smoke.tests.TestsPositive","testColorOfButtonAdd","testColorOfButtonAdd()",""
+"broken","Sun Jan 14 15:56:43 YEKT 2024","Sun Jan 14 15:56:54 YEKT 2024","11577","","smoke.tests.TestsPositive","","smoke.tests.TestsPositive","testColorOfButtonSave","testColorOfButtonSave()",""
+"broken","Sun Jan 14 15:56:27 YEKT 2024","Sun Jan 14 15:56:43 YEKT 2024","15132","","smoke.tests.TestsPositive","","smoke.tests.TestsPositive","testAddingVegetable","Проверка добавления овоща",""
