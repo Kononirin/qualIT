@@ -1,9 +1,7 @@
 package smoke.tests;
 
 
-import io.qameta.allure.Allure;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -26,6 +24,7 @@ public class TestsPositive extends BaseTest {
             "5", "ЭкЗоТиЧеСкИй FrUiT!", "Фрукт", "true");
 
     @Owner("Irina Shlyapina")
+    @Feature("Добавление товара")
     @DisplayName("Проверка добавления экзотического фрукта")
     @Test
     public void testAddingExoticFruit() {
@@ -63,6 +62,8 @@ public class TestsPositive extends BaseTest {
     List<String> listWithVegetableSpecialCharacters = Arrays.asList(
             "5", "`!@#$%^&*()_+?/~.♣☺♂{code};–<>", "Овощ", "false");
 
+    @Owner("Irina Shlyapina")
+    @Feature("Добавление товара")
     @DisplayName("Проверка добавления овоща")
     @Test
     public void testAddingVegetable() {
@@ -96,6 +97,9 @@ public class TestsPositive extends BaseTest {
                 .clickPointDeleteData();
     }
 
+    @Owner("Irina Shlyapina")
+    @Feature("Цвет кнопки")
+    @DisplayName("Проверка цвета кнопки Добавить")
     @Test
     public void testColorOfButtonAdd() {
         mainPage = new MainPage(driver);
@@ -110,6 +114,10 @@ public class TestsPositive extends BaseTest {
                 "Отличается цвет кнопки");
     }
 
+    @Owner("Irina Shlyapina")
+    @Flaky
+    @Feature("Цвет кнопки")
+    @DisplayName("Проверка цвета кнопки Сохранить")
     @Test
     public void testColorOfButtonSave() {
         mainPage = new MainPage(driver);
