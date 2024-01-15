@@ -6,5 +6,5 @@
 
 Используемые технологии:
 
-Java Coretto-17, Selenium 4.11.0, Junit.jupiter 5.8.2, Maven, h2database, allure 2.24.0, cucumber 7.13.0
+Java Coretto-17, Selenium 4.11.0, Junit.jupiter 5.8.2, Maven, h2database, Allure 2.24.0, Cucumber 7.13.0
 
