@@ -7,7 +7,6 @@ import org.junit.platform.suite.api.IncludeEngines;
 import static io.cucumber.core.options.Constants.*;
 import static io.cucumber.core.options.Constants.PLUGIN_PROPERTY_NAME;
 
-
 @IncludeEngines("cucumber")
 @ConfigurationParameters({
         @ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@true"),

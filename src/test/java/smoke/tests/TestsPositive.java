@@ -1,9 +1,6 @@
 package smoke.tests;
 
-
-import io.qameta.allure.Allure;
 import io.qameta.allure.Owner;
-import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

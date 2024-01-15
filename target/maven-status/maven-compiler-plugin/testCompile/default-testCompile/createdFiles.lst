@@ -1,8 +1,0 @@
-smoke\database\BaseDB.class
-smoke\pages\ListOfFoodPage.class
-smoke\core\BaseTest.class
-smoke\database\Database.class
-smoke\runner\RunnerTest.class
-smoke\core\BasePage.class
-smoke\pages\MainPage.class
-smoke\tests\TestsPositive.class
