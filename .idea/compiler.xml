@@ -9,5 +9,8 @@
         <module name="qualIT" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="junit5-java-maven" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
