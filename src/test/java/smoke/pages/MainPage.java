@@ -1,7 +1,8 @@
 package smoke.pages;
 
 import io.cucumber.java.bg.И;
-import io.qameta.allure.Step;
+import io.cucumber.java.ru.Дано;
+import io.cucumber.java.ru.Когда;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,21 +12,26 @@ import smoke.core.BasePage;
 public class MainPage extends BasePage {
 
     @FindBy(id = "navbarDropdown")
-    private WebElement dropdownSandbox;
+    public WebElement dropdownSandbox;
 
     @FindBy(xpath = "//a[@href='/food']")
-    private WebElement pointFood;
+    public WebElement pointFood;
 
     @FindBy(id = "reset")
-    private WebElement buttonDeleteData;
+    public WebElement buttonDeleteData;
 
     public MainPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
+    String url = "http://localhost:8080/";
 
+    @Дано("открыт стенд по адресу {string}")
+    public void openStand(String str) {
+        driver.get(url);
+    }
 
-    @И("Пользователь нажимает на выпадающий список 'Песочница'")
+    @Когда("Пользователь нажимает на выпадающий список 'Песочница'")
     public MainPage clickDropdownSandbox() {
         dropdownSandbox.click();
         return this;
@@ -42,5 +48,4 @@ public class MainPage extends BasePage {
         buttonDeleteData.click();
         return this;
     }
-
 }

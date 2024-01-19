@@ -1,7 +1,7 @@
 package smoke.core;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,19 +12,20 @@ public class BaseTest {
 
     protected WebDriver driver;
 
-    @BeforeEach
+    @Before
     public void beforeAll() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("http://localhost:8080/");
 
         BasePage.setDriver(driver);
     }
 
-    @AfterEach
+
+
+    @After
     public void afterMethod() {
         driver.quit();
     }
